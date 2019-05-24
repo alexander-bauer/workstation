@@ -1,0 +1,23 @@
+[user]
+	email = sasha@linux.com
+	name = Alexander Bauer
+[push]
+	default = simple
+[core]
+	pager = less -MR
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[alias]
+	tree = log --graph --oneline --decorate --all
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
