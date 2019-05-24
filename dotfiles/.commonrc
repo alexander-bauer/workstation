@@ -1,0 +1,14 @@
+# vim: ft=sh
+
+# User specific aliases and functions
+set -o vi
+
+export EDITOR=nvim
+
+# keep sorted
+alias beep='echo -e -n \\a'
+
+# If there is an existing TMUX window, and we are not in it, attach to it
+if [[ -z "$TMUX" ]]; then
+        tmux attach 1>/dev/null 2>/dev/null
+fi
