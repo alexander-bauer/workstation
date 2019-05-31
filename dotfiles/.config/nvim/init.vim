@@ -21,8 +21,10 @@ endfunction
 nnoremap <silent> \s :<C-u>set operatorfunc=<SID>SortLinesOpFunc<CR>g@
 
 " Plugins
-call plug#begin('~/.vim/plugged')
+if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
+    call plug#begin('~/.vim/plugged')
 
-Plug 'nathangrigg/vim-beancount'
+    Plug 'nathangrigg/vim-beancount'
 
-call plug#end()
+    call plug#end()
+endif
