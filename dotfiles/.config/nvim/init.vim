@@ -10,7 +10,7 @@ set list listchars=trail:·,tab:»·
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
 
 " Custom Bindings
 
