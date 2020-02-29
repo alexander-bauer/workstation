@@ -5,6 +5,7 @@
 	default = simple
 [core]
 	pager = less -MR
+	editor = nvim
 
 [color]
 	diff = auto
