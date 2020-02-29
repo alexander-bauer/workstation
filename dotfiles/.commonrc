@@ -3,7 +3,10 @@
 # User specific aliases and functions
 set -o vi
 
-export EDITOR=nvim
+export EDITOR=vi
+command -v nvim >/dev/null 2>&1 && {
+  alias vi=nvim
+}
 
 # keep sorted
 alias beep='echo -e -n \\a'
