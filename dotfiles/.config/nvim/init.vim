@@ -24,6 +24,9 @@ nnoremap <silent> \s :<C-u>set operatorfunc=<SID>SortLinesOpFunc<CR>g@
 if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
     call plug#begin('~/.vim/plugged')
 
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    let g:deoplete#enable_at_startup = 1
+
     Plug 'nathangrigg/vim-beancount'
 
     call plug#end()
