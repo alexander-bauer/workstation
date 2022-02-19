@@ -19,3 +19,5 @@
 	tree = log --graph --oneline --decorate --all
 [rebase]
 	autosquash = true
+[pull]
+	rebase = true
