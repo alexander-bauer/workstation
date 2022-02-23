@@ -10,6 +10,9 @@ set list listchars=trail:·,tab:»·
 " Disable search highlighting
 set nohlsearch
 
+" Set colorscheme
+colorscheme elflord
+
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 
