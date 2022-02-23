@@ -21,7 +21,6 @@ function! s:SortLinesOpFunc(...)
     '[,']sort
 endfunction
 
-nmap <C-n> :NERDTreeToggle<CR> \| NERDTreeFind<CR>
 nnoremap <silent> \s :<C-u>set operatorfunc=<SID>SortLinesOpFunc<CR>g@
 
 " Plugins
@@ -41,3 +40,23 @@ endif
 " Vim-Terraform options
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
+
+" NERDTree settings
+
+"Buffers
+set hidden
+
+function! IsNERDTreeOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+function! ToggleNT()
+    NERDTreeToggle
+endfunction
+
+map <c-n> <Esc>:call ToggleNT()<cr>
+
+" Highlight the current buffer.
+autocmd BufEnter * if &modifiable && IsNERDTreeOpen() && bufnr('') != bufnr(t:NERDTreeBufName) | NERDTreeFind | wincmd p | endif
+" Automatically exit if NERDTree is the last buffer.
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
