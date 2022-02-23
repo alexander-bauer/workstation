@@ -30,12 +30,16 @@ if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     let g:deoplete#enable_at_startup = 1
 
+    Plug 'Yggdroot/indentLine'
     Plug 'hashivim/vim-terraform'
     Plug 'nathangrigg/vim-beancount'
     Plug 'preservim/nerdtree'
 
     call plug#end()
 endif
+
+" indentLine options
+let g:indentLine_char = '·'
 
 " Vim-Terraform options
 let g:terraform_align = 1
