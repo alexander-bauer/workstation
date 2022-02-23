@@ -34,6 +34,7 @@ if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
     Plug 'hashivim/vim-terraform'
     Plug 'liuchengxu/graphviz.vim'
     Plug 'nathangrigg/vim-beancount'
+    Plug 'pedrohdz/vim-yaml-folds'
     Plug 'preservim/nerdtree'
 
     call plug#end()
