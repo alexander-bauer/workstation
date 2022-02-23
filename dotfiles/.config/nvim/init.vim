@@ -32,6 +32,7 @@ if !empty(glob("~/.local/share/nvim/site/autoload/plug.vim"))
 
     Plug 'Yggdroot/indentLine'
     Plug 'hashivim/vim-terraform'
+    Plug 'liuchengxu/graphviz.vim'
     Plug 'nathangrigg/vim-beancount'
     Plug 'preservim/nerdtree'
 
