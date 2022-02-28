@@ -1,4 +1,5 @@
 " Allow modelines
+" vim: set sw=4 et
 set modeline
 
 " Set line numbering
@@ -9,6 +10,11 @@ set list listchars=trail:·,tab:»·
 
 " Disable search highlighting
 set nohlsearch
+
+if has("nvim")
+    " Preview changes when doing a command.
+    set inccommand=nosplit
+endif
 
 " Set colorscheme
 colorscheme elflord
