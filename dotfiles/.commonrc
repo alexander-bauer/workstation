@@ -8,15 +8,21 @@ command -v nvim >/dev/null 2>&1 && {
   alias vi=nvim
 }
 
+# Configure instant history writing
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 # keep sorted
 alias beep='echo -e -n \\a'
+alias spheode='podman run -v "$(pwd):/repo:ro" -p "8000:8000" registry.gitlab.com/alexander-bauer/spheode:latest'
+
+# Add local bins
+if [[ -d "$HOME/go/bin" ]]; then export PATH="$HOME/go/bin:$PATH"; fi
+if [[ -d "${KREW_ROOT:-$HOME/.krew}" ]]; then export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"; fi
+if [[ -d "$HOME/.local/bin" ]]; then export PATH="$HOME/.local/bin:$PATH"; fi
+if [[ -d "$HOME/bin" ]]; then export PATH="$HOME/bin:$PATH"; fi
 
 # If there is an existing TMUX window, and we are not in it, attach to it
 if [[ -z "$TMUX" ]]; then
         tmux attach 1>/dev/null 2>/dev/null
 fi
-
-# Add local bins
-if [[ -d "$HOME/go/bin" ]]; then export PATH="$HOME/go/bin:$PATH"; fi
-if [[ -d "$HOME/.local/bin" ]]; then export PATH="$HOME/.local/bin:$PATH"; fi
-if [[ -d "$HOME/bin" ]]; then export PATH="$HOME/bin:$PATH"; fi
